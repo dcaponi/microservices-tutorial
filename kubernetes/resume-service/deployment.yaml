@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: resume-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: resume-service
+  template:
+    metadata:
+      labels:
+        app: resume-service
+    spec:
+      containers:
+      - name: resume-service
+        image: dcaponi1/resume-service:1.1
+        resources:
+          limits:
+              memory: "128Mi"
+              cpu: "500m"
+        ports:
+        - containerPort: 8081

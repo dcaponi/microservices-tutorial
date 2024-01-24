@@ -1,0 +1,10 @@
+k8s_yaml(
+    [
+        "candidate-service/deployment.yaml",
+        "candidate-service/service.yaml",
+        "resume-service/deployment.yaml",
+        "resume-service/service.yaml",
+    ]
+)
+docker_build("dcaponi1/candidate-service", "../candidate-service/")
+docker_build("dcaponi1/resume-service", "../resume-service/")
